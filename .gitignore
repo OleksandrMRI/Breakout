@@ -1,4 +1,14 @@
+#
 .idea/
+
+#
 *.iml
+
+#
 out/
+
+#
 *.jar
+#
+!lib/
+!lib/*.jar
