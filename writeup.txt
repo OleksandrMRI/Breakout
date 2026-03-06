@@ -1,0 +1,61 @@
+
+    1.
+    First two variables is necessary to use to realized basic condition game.
+    Last four variables I create to realized  additional improvements, such as labels with short instructions,
+    label that inform player how many bricks left, and velocity acceleration during the game.
+
+    //rectangle paddle
+        private GRect paddle;
+        GRect paddle uses in method mouseMoved(). This method accepts only one parameter MouseEvent e.
+        In such condition I create this variable as a global.
+
+    //number of bricks, that decrease by one, everytime one brick removed
+        private int counter = NBRICK_ROWS * NBRICKS_PER_ROW;
+        I create this variable as global, because it uses in method which by decomposition cannot return anything,
+        for example showResultGame(), playGame() or playOneTurn().
+        Methods showResultGame() and playGame() cannot change with parameters, but both use variable counter.
+        Methods playGame() or playOneTurn() used for dividing program
+        to logical unit and can not return anything. So if I create variable as local at method playGame()
+        and pass it in playOneTurn(), the changes of it`s value  will not return,
+        and the changes of it`s value will not use in playGame() method.
+        Such condition is meets several times in my program/
+        Also I must use counter for finishing game, when player win.
+        So I create this variable as a global.
+
+
+
+    // variable of counter label in canvas
+        private GLabel counterBrick = null;
+        I create this variable as global, because in that levels of decomposition, where I can create method
+        for return value of counterBrick, I change it in cycle.
+        So this cycle is inside method playOneTurn(), that can return anything.
+        That is why I can not to pass value in method level up, where is cycle present.
+        Level up method playGame() also has a cycle,
+        So if I initialize variable as local, in every iteration of playGame() cycle label keeps value and new value draws in front of old.
+        To correct this I must create code without decomposition for realised counterBrick as local variable.
+        I think it`s not a good idea. So I decided to make variable counterBrick, as a global.
+
+    // x and y coordinates of baseline of animation notification in the center of canvas
+        private double xBaseLine;
+        private double yBaseLine;
+        These variables I enter as global because it used in several methods.
+        Values of these variables calculate in method drawLabel() and
+        depend on width of passing string. This method returns GLabel, and I can not return these two variables too.
+        After calculating values of xBaseLine and yBaseLine, for each label, these variables use in method add(),
+        that I use separate from drawLabel() for adding several labels to canvas.
+        So I can not get value of xBaseLine and yBaseLine another way, but only create them as global variable
+
+    // variable of velocity acceleration of ball
+        int dv = 5;
+        Here is the same problem as with previous variable.
+        Only difference that every iteration of cycle in method playGame()
+        dv initialized with default value, and ball start fly slowly again/ To correct this I
+        make variable dv, as a global.
+
+    2.
+    I create global variable counter with value equal whip number of brick in raw and numbers of brick rows.
+        Every time when brick is removed counter decrease by one.
+        So I use if operation when counter became zero, with return and finish basic cycle of three turns.
+        After there I congratulate player with victory.
+
+
