@@ -2,6 +2,9 @@
 .idea/
 
 #
+*.class
+
+#
 *.iml
 
 #

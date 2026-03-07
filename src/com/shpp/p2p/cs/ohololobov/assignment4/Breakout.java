@@ -21,7 +21,7 @@ import java.awt.event.MouseEvent;
  * In this variant of game ball starts fly from paddle up
  * with start velocity by y direction, and random velocity by x direction.
  */
-public class Breakout_ext extends WindowProgram {
+public class Breakout extends WindowProgram {
     /**
      * Width and height of application window in pixels
      */
@@ -179,9 +179,9 @@ public class Breakout_ext extends WindowProgram {
            this method create balls of lives counter
          */
         createLivesBalls();
-        pause(1000);
+        pause(100);
         /*
-          method create and show animation of greeting labels? and short instruction for begin game.
+          method create and show animation of greeting labels, and short instruction for begin game.
          */
         showGreetingInstruction();
     }
@@ -296,7 +296,7 @@ public class Breakout_ext extends WindowProgram {
                     getHeight() - PADDLE_Y_OFFSET - BALL_RADIUS * 2.0 - 5);
 
             /*
-              method that activate pause of program? until player click let mouse button.
+              method that activate pause of program, until player click let mouse button.
              */
             waitForClick();
 
@@ -443,7 +443,7 @@ public class Breakout_ext extends WindowProgram {
 
     /**
      * method create animation label with instruction to run ball and write number of runnable ball
-     * Labels is appears on the border of  lower and middle third of game window
+     * Labels is appearing on the border of  lower and middle third of game window
      *
      * @param i - - variable for counting balls
      */
@@ -473,7 +473,7 @@ public class Breakout_ext extends WindowProgram {
 
     /**
      * method create animation label with greeting instruction
-     * Labels is appears in center of game window
+     * Labels is appearing in center of game window
      */
     private void showGreetingInstruction() {
         //variables of x and y start points
@@ -520,7 +520,7 @@ public class Breakout_ext extends WindowProgram {
                 label = drawLabel(three, xBase, yBase, font, color);
             }
             add(label, xBaseLine, yBaseLine);
-            pause(1000);
+            pause(900);
             remove(label);
         }
     }
