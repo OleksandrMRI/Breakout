@@ -13,13 +13,26 @@ This project uses an external graphical library provided by the **SHPP Programmi
 
 > **Note:** The library is included in the `lib/` directory to ensure the project is self-contained and can be run immediately after cloning.
 
+## Technical Requirements & Setup
+To run this project correctly, please ensure your environment matches the following configuration:
+
+### 1. Java SDK
+- **Version:** Java 18 (OpenJDK 18 or Oracle JDK 18).
+- *Note:* Using a different version may cause compatibility issues with the pre-compiled library.
+
+### 2. IDE Configuration (IntelliJ IDEA recommended)
+- **Project SDK:** Set to Java 18 in `File` -> `Project Structure` -> `Project`.
+- **Language Level:** Set to `18 - No new language features`.
+- **Compiler Output:** Ensure the output path is set to the `out` directory in your project root (`File` -> `Project Structure` -> `Project` -> `Project compiler output`).
+
+### 3. Dependencies
+- Add the library manually: `File` -> `Project Structure` -> `Libraries` -> `+` -> Select `lib/shpp-cs-java-lib.jar`.
+
 ## How to Run
-1. **Clone** the repository to your local machine.
-2. **Open** the project in IntelliJ IDEA (or any Java IDE).
-3. **Configure Dependencies**:
-    - Go to `File` -> `Project Structure` -> `Libraries`.
-    - Add `lib/shpp-cs-java-lib.jar` from the project root.
-4. **Run** the `Breakout.java` main class.
+1. Clone the repository.
+2. Apply the settings mentioned above.
+3. Locate `src/Breakout.java`.
+4. Right-click and select **Run 'Breakout.main()'**.
 
 ---
 *Developed during the curriculum of SHPP Programming School.*
